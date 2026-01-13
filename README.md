@@ -2,17 +2,10 @@ this is a hotel management project where the rooms can be booked by the users an
 
 the database code for the project is given below as it was run on the terminal
 
--- ============================================
--- HOTEL BOOKING SYSTEM DATABASE SETUP
--- ============================================
 
--- Create Database
 CREATE DATABASE IF NOT EXISTS hotel_booking;
 USE hotel_booking;
 
--- ============================================
--- 1. USERS TABLE
--- ============================================
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -28,9 +21,6 @@ CREATE TABLE users (
     INDEX idx_role (role)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ============================================
--- 2. ROOMS TABLE
--- ============================================
 CREATE TABLE rooms (
     room_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE,
@@ -52,9 +42,6 @@ CREATE TABLE rooms (
     INDEX idx_price (price)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ============================================
--- 3. BOOKINGS TABLE
--- ============================================
 CREATE TABLE bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
